@@ -1,12 +1,17 @@
 import React from "react";
 import { useState, useEffect } from 'react';
 
-
-const Search = () => {
-    const [city, setCity] = useState('');
+// passing in the data that i want to set
+const Search = ({setCity}) => {
+    // creating a new state for the data 
+    const [inputData ,setInputData ] = useState([]); 
+  //creating a function so that i can do something with the input
     const onSubmit = e => {
+        
         e.preventDefault()
-        console.log(city)
+        
+       setCity([inputData])
+      
     }
 
 
@@ -15,9 +20,9 @@ const Search = () => {
             <input
                 type='search'
                 className="search-bar"
-                onChange={(e) => setCity(e.target.value)}
+                onChange={(e) => setInputData(e.target.value)}
                 placeholder="Enter city name"
-                value={city}
+                 value={inputData}
             />
             <button
                 type="submit"
