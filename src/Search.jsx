@@ -1,17 +1,31 @@
 import React from "react";
-
+import { useState, useEffect } from 'react';
 
 
 const Search = () => {
+    const [city, setCity] = useState('');
+    const onSubmit = e => {
+        e.preventDefault()
+        console.log(city)
+    }
+
+
     return (
-        <div>
+        <form onSubmit={onSubmit}>
             <input
-                type="search"
-                placeholder="Search a city"
+                type='search'
+                className="search-bar"
+                onChange={(e) => setCity(e.target.value)}
+                placeholder="Enter city name"
+                value={city}
             />
-        <button>enter</button> 
-        </div>
-       
+            <button
+                type="submit"
+                onClick={onSubmit}
+
+            >enter</button>
+        </form>
+
     )
 }
 
