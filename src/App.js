@@ -23,7 +23,7 @@ function App() {
     <div>
       <div>Weather App</div>
       <Search setCity={setCity}/>
-      <Current setwData = {setwData}wData = {wData}/>
+      <Current wData={wData}/>
       {/* passing in setCity so i can change the state */}
     </div>
   )
