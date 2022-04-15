@@ -1,9 +1,9 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-
+import localStorage from "./localStorage";
 // passing in the data that i want to set
 const Search = ({setCity}) => {
-    // console.log(setCity)
+  
     // creating a new state for the data 
     const [inputData ,setInputData ] = useState([]); 
   //creating a function so that i can do something with the input
@@ -12,7 +12,7 @@ const Search = ({setCity}) => {
         e.preventDefault()
         
        setCity([inputData])
-      
+      console.log(inputData)
     }
 
 

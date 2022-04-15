@@ -1,15 +1,19 @@
 import React from "react";
-
+import Five from "./Five";
 
 const Current = ({wData}) => {
- console.log("weather",wData.weather[0].description)
-return (
-    <div>
-   <h1 className = 'cityname'>{wData.name}</h1>
-   <p className = 'temp'>{wData.main.temp}</p>
-   <p className = 'description'>{wData.weather[0].description}</p>
-   </div>
-)
+const data = {wData}
+console.log(data)
+  return (
+       <div>
+            {/* <Five data ={data}/> */}
+        {/* <h2>{wData?.coord?.lat}</h2> */}
+        <h1>{wData?.name}</h1>
+        <p>{wData?.main?.temp}</p>
+        <p>{wData?.weather?.[0]?.description}</p>
+      
+       </div>
+  )
 }
 
 export default Current 
