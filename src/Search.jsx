@@ -12,7 +12,7 @@ const Search = ({setCity}) => {
         e.preventDefault()
         
        setCity([inputData])
-      console.log(inputData)
+     
     }
 
 
