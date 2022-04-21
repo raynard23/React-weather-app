@@ -3,6 +3,7 @@ import './App.css';
 import React from 'react';
 import Search from './Search';
 import Current from './Current';
+import Five from './Five';
 import { useState, useEffect, } from 'react';
 
 // api key = 57e0bb28-bf1d-11ec-8364-0242ac130002-57e0bba0-bf1d-11ec-8364-0242ac130002
@@ -23,12 +24,14 @@ function App() {
     .catch(Error)
   },[city])
  
+
   
    return (
      <div>
      <h1> Weather app </h1>
      <Search setCity={setCity}/>
      {city && <Current wData={wData}/> }
+     {city && <Five wData={wData}/>}
     
      </div>
    )
