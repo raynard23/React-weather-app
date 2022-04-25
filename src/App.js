@@ -11,27 +11,34 @@ import { useState, useEffect, } from 'react';
 function App() {
   const [wData, setwData] = useState('');
   const [city, setCity] = useState('');
+  const [fData, setFdata] = useState('')
 
- 
-   
-   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=4104b4a9e4ef52f40d4722ac1ba994e9`;
   
-  useEffect(() => {
-    fetch(url)
+   
 
-    .then(res => res.json())
-    .then(data=>setwData(data))
-    .catch(Error)
-  },[city])
+
+useEffect(() => {
+fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=4104b4a9e4ef52f40d4722ac1ba994e9`)
+.then(resp => resp.json())
+.then(data => {
+  setwData(data)
  
+   console.log("wData", data)
+  fetch(`http://api.openweathermap.org/data/2.5/onecall?lat=${data.coord?.lat}&lon=${data.coord?.lon}&units=imperial&exclude=hourly&appid=4104b4a9e4ef52f40d4722ac1ba994e9`)
+  .then(resp => resp.json())
+  .then(data => setFdata(data))
+})
 
+  },[city])
+  
+ 
   
    return (
      <div>
      <h1> Weather app </h1>
      <Search setCity={setCity}/>
      {city && <Current wData={wData}/> }
-     {city && <Five wData={wData}/>}
+     {city && <Five fData={fData}/>}
     
      </div>
    )
@@ -39,7 +46,7 @@ function App() {
 
 
     
-  // ) 
+  
   
 }
 
