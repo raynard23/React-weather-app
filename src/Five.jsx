@@ -1,25 +1,25 @@
-import React from 'react'
-import { useState, useEffect, } from 'react';
-
-const Five = ({fData}) => {
-    
+import React, { useState } from 'react'
 
 
-// console.log(fData)
- let iCon = fData?.daily?.[0].weather?.[0]?.icon;
+const Five = ({ dayData }) => {
 
+  
+  let iCon = dayData?.weather?.[0]?.icon;
 
+  
 
-     return (
-      <div>
-        <div> Temp: {Math.round(fData?.daily?.[0].temp.day)}</div>
-         <p>Description: {fData?.daily?.[0].weather?.[0]?.main}</p> 
-         <img src ={`http://openweathermap.org/img/w/${iCon}.png`}/> 
-
-
-     </div>
+  return (
    
-     )
+   <div className='fiveDay'>
+
+      <div> Temp: {Math.round(dayData?.main?.temp)}</div>
+      <p>Description: {dayData?.weather?.[0]?.description}</p> 
+      <img alt="" src={`http://openweathermap.org/img/w/${iCon}.png`} /> 
+
+
+  </div>
+
+  )
 }
 
 

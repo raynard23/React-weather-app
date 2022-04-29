@@ -1,14 +1,23 @@
-// import React from "react";
-// import Five from "./Five";
+import React from "react";
+import Five from "./Five";
+import { useEffect,useState } from "react";
+
+ const FiveList = ({fData}) => {
 
 
-// export const FiveList = ({Five}) => {
 
-//    const fList =[]
-//        for(let i = 0; i < 5; i++){
-//         fList.push(Five[i])
-//        }
-    
-// }
+return(
+    <div>
+        {
+    fData?.map((ele)=> {
+        return(
+   <Five dayData ={ele}/>
+        )
+    })
+}
 
-// export default FiveList 
+</div>
+)
+}
+
+export default FiveList 

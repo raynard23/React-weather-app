@@ -13,7 +13,7 @@ const Current = ({wData}) => {
          <h3>City Name:  {wData?.name}</h3>
          <h4>Temperature: {Math.round(wData?.main?.temp)}</h4>
          <h4>Description: {wData?.weather?.[0]?.description}</h4>
-         <img src ={`http://openweathermap.org/img/w/${iconImg}.png`}/> 
+         <img alt = "" src ={`http://openweathermap.org/img/w/${iconImg}.png`}/> 
        
 
 
