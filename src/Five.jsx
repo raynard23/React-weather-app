@@ -10,12 +10,13 @@ const Five = ({ dayData }) => {
 
   return (
    
-   <div className='fiveDay'>
+   <div className='column'>
+    
 
-      <div> Temp: {Math.round(dayData?.main?.temp)}</div>
+      <div > Temp: {Math.round(dayData?.main?.temp)}</div>
       <p>Description: {dayData?.weather?.[0]?.description}</p> 
       <img alt="" src={`http://openweathermap.org/img/w/${iCon}.png`} /> 
-
+     
 
   </div>
 

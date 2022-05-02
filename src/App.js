@@ -6,6 +6,7 @@ import Current from './Current';
 import Five from './Five';
 import FiveList from './FiveList';
 import { useState, useEffect, } from 'react';
+import 'bulma/css/bulma.min.css';
 
 // api key = 57e0bb28-bf1d-11ec-8364-0242ac130002-57e0bba0-bf1d-11ec-8364-0242ac130002
 

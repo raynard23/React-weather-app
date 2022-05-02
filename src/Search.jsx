@@ -18,14 +18,14 @@ const Search = ({setCity}) => {
 
     return (
         <form onSubmit={onSubmit}>
-            <input
+            <input 
                 type='search'
-                className="search-bar"
+                className="search-bar is-center"
                 onChange={(e) => setInputData(e.target.value)}
                 placeholder="Enter city name"
                  value={inputData}
             />
-            <button
+            <button className="button is-black is-small"
                 type="submit"
                 onClick={onSubmit}
 

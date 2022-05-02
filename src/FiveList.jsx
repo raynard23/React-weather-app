@@ -7,11 +7,12 @@ import { useEffect,useState } from "react";
 
 
 return(
-    <div>
+    <div className="columns">
         {
     fData?.map((ele)=> {
         return(
-   <Five dayData ={ele}/>
+            
+   <Five dayData = {ele}/>
         )
     })
 }
