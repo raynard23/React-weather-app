@@ -9,7 +9,7 @@ const Current = ({wData}) => {
   return (
     
 
-       <div>
+       <div className=" current">
          <h3>City Name:  {wData?.name}</h3>
          <h4>Temperature: {Math.round(wData?.main?.temp)}</h4>
          <h4>Description: {wData?.weather?.[0]?.description}</h4>

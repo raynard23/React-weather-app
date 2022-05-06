@@ -2,25 +2,28 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import localStorage from "./localStorage";
 // passing in the data that i want to set
-const Search = ({setCity}) => {
+const Search = ({setCity , city}) => {
+  
+   
   
     // creating a new state for the data 
     const [inputData ,setInputData ] = useState([]); 
   //creating a function so that i can do something with the input
+
     const onSubmit = e => {
         
-        e.preventDefault()
+         e.preventDefault()
         
        setCity([inputData])
-     
+       
+    
     }
 
-
     return (
-        <form onSubmit={onSubmit}>
+        <form className="form" onSubmit={onSubmit}>
             <input 
                 type='search'
-                className="search-bar is-center"
+                className="search-bar "
                 onChange={(e) => setInputData(e.target.value)}
                 placeholder="Enter city name"
                  value={inputData}
