@@ -1,9 +1,11 @@
 import React from "react";
 
-const CityList = ({wData}) => {
+const CityList = ({city}) => {
+// can push each city in an array and then display 
+
 
     
-  return <li>{ wData?.name}</li>
+  return <li>{city}</li>
 }
 
 

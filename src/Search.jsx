@@ -1,25 +1,34 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-import localStorage from "./localStorage";
+// import localStorage from "./localStorage";
 // passing in the data that i want to set
 const Search = ({setCity , city}) => {
   
    
   
     // creating a new state for the data 
-    const [inputData ,setInputData ] = useState([]); 
-  //creating a function so that i can do something with the input
-
+    const [inputData ,setInputData ] = useState(''); 
+    let local; 
+  
     const onSubmit = e => {
         
-         e.preventDefault()
-        
-       setCity([inputData])
-       
+          e.preventDefault()
+      
+       setCity(inputData)
+       let gStorage = JSON.parse(localStorage.getItem('city')) || [];
+    //    why does this not work without that array symbol 
+    
+       gStorage.push(inputData)
+        local =  localStorage.setItem('city',JSON.stringify(gStorage))
+
+     
+    
     
     }
+   
 
     return (
+    <div>
         <form className="form" onSubmit={onSubmit}>
             <input 
                 type='search'
@@ -32,9 +41,11 @@ const Search = ({setCity , city}) => {
                 type="submit"
                 onClick={onSubmit}
 
-            >enter</button>
-        </form>
-
+            >enter</button> 
+            
+        </form> 
+      
+</div>
     )
 }
 
