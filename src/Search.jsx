@@ -19,25 +19,23 @@ const Search = ({ setCity }) => {
         setCity(inputData) 
       
          if (e.target.className.includes('is-black')){
-          
+          let gStorage = JSON.parse(localStorage.getItem('city')) || [];
+
+
+            if (!gStorage.includes(inputData) ){
+                gStorage.push(inputData)
+             
+            localStorage.setItem('city', JSON.stringify(gStorage)) 
+            }else{
+                alert("search a new city , or add a city ")
+            }
             setInputData("")
-    
-            let gStorage = JSON.parse(localStorage.getItem('city')) || [];
-    
-            gStorage.push(inputData)
-           
-            localStorage.setItem('city', JSON.stringify(gStorage))
         }
          
         
 
     }
-    const clear = e => {
-        
-        localStorage.clear()
-        // console.log("clear")
-    }
-
+    
     return (
         <div>
             <form className="form" onSubmit={onSubmit}>
@@ -54,12 +52,12 @@ const Search = ({ setCity }) => {
 
                 >enter</button>
                
-                <button
+                {/* <button
                     onClick={clear}
                 >
-                    clear</button>
+                    clear</button> */}
                     </form>
-
+           
         </div>
     )
 }

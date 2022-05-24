@@ -7,8 +7,8 @@ import Five from './Five';
 import FiveList from './FiveList';
 import { useState, useEffect, } from 'react';
 import 'bulma/css/bulma.min.css';
-
- import LocalList from './LocalList';
+import LocalList from './LocalList';
+// import LocalClear from './LocalClear';
 
 
 function App() {
@@ -42,15 +42,20 @@ fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&a
 
   },[city])
 
-  
+  const clear = () => {
+    localStorage.clear()
+    console.log(localStorage)
+    // LocalList.style.visibility = hidden
+  }
    return (
      <div className='has-background '>
      <h1 className='title' >  Weather app </h1>
      <Search setCity={setCity}/>
      {city && <Current wData={wData} fData={fData}/> }
     
+     <button onClick={clear}>Clear List </button>
+     { gStorage && <LocalList gStorage={gStorage} setCity={setCity}/>}
      
-     {  <LocalList gStorage={gStorage} setCity={setCity}/>}
      {city && <FiveList fData={fData}/>}
     
      </div>
