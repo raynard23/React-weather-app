@@ -10,10 +10,13 @@ return(
     <div className="columns">
         {
     fData?.map((ele)=> {
+        
         return(
             
    <Five dayData = {ele}/>
+   
         )
+      
     })
 }
 
