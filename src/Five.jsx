@@ -6,7 +6,7 @@ const Five = ({ dayData }) => {
   // console.log('temp',dayData)
   let iCon = dayData?.weather?.[0]?.icon;;
 
-  console.log('icon', iCon)
+  
 
   return (
    

@@ -27,7 +27,7 @@ fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&a
   fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord?.lat}&lon=${data.coord?.lon}&units=imperial&exclude=minutely,hourly,alerts&appid=4104b4a9e4ef52f40d4722ac1ba994e9`)
   .then(resp => resp.json())
   .then(data => {
-    console.log(data)
+    
     let fiveArray = []
     for(let i = 1 ; i <= 5; i++ ){
      
@@ -35,6 +35,7 @@ fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&a
      
    }
    setFdata(fiveArray)
+   
   })
 
 })
@@ -46,7 +47,7 @@ fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&a
      <div className='has-background '>
      <h1 className='title' >  Weather app </h1>
      <Search setCity={setCity}/>
-     {city && <Current wData={wData} fdata={fData}/> }
+     {city && <Current wData={wData} fData={fData}/> }
     
      
      {  <LocalList gStorage={gStorage} setCity={setCity}/>}
