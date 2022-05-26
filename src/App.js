@@ -16,7 +16,7 @@ function App() {
   const [fiveDayWeather, setFiveDayWeather] = useState([])
   
   let gStorage = JSON.parse(localStorage.getItem('city')) || [];
-  
+  let hide; 
 useEffect(() => {
 fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=4104b4a9e4ef52f40d4722ac1ba994e9`)
 .then(resp => resp.json())
@@ -37,7 +37,7 @@ fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&a
    
   })
 
-})
+}).catch(err =>alert('that is not a valid city'))
 
   },[city])
 
@@ -45,11 +45,11 @@ fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&a
    return (
      <div className='has-background '>
      <h1 className='title' >  Weather app </h1>
-     <Search setCity={setCity} fiveDayWeather ={fiveDayWeather}/>
+     {<Search setCity={setCity} fiveDayWeather ={fiveDayWeather}/>}
      {city && <Current currentWeather={currentWeather} fiveDayWeather={fiveDayWeather}/> }
     
      
-     { gStorage.length > 0 && <LocalStorageList gStorage={gStorage} setCity={setCity}/>}
+     { gStorage.length > 0 &&  <LocalStorageList gStorage={gStorage} setCity={setCity}/>}
      
      {city && <FiveList fiveDayWeather={fiveDayWeather}/>}
     

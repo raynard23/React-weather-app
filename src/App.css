@@ -66,6 +66,9 @@
 .red{
   color: red; 
 }
-.hisList{
-  visibility: visible;
+.hidden{
+  visibility: hidden;
 }
+/* .show{
+  display: 
+} */
