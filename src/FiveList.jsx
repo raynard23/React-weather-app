@@ -1,19 +1,19 @@
 import React from "react";
-import Five from "./Five";
+import Five from "./FiveDayWeather";
 import { useEffect,useState } from "react";
 
- const FiveList = ({fData}) => {
+ const FiveList = ({fiveDayWeather}) => {
 
 
 
 return(
     <div className="columns">
         {
-    fData?.map((ele)=> {
-        
+    fiveDayWeather?.map((ele)=> {
+       
         return(
             
-   <Five dayData = {ele}/>
+   <Five key={ele.dt} dayData = {ele}/>
    
         )
       

@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from 'react';
 // import localStorage from "./localStorage";
 // passing in the data that i want to set
-const Search = ({ setCity }) => {
+const Search = ({ setCity , fiveDayWeather}) => {
 
 
 
@@ -12,13 +12,13 @@ const Search = ({ setCity }) => {
 
 
     const onSubmit = e => {
-        
+    
         e.preventDefault()
         //  console.log("onsubmit")
         
         setCity(inputData) 
       
-         if (e.target.className.includes('is-black')){
+        
           let gStorage = JSON.parse(localStorage.getItem('city')) || [];
 
 
@@ -30,12 +30,17 @@ const Search = ({ setCity }) => {
                 alert("search a new city , or add a city ")
             }
             setInputData("")
-        }
+        
          
         
 
     }
+    const clear = () => {
+        localStorage.clear()
+       
     
+        // LocalStorageList.style.visibility = hidden
+      }
     return (
         <div>
             <form className="form" onSubmit={onSubmit}>
@@ -52,10 +57,7 @@ const Search = ({ setCity }) => {
 
                 >enter</button>
                
-                {/* <button
-                    onClick={clear}
-                >
-                    clear</button> */}
+               
                     </form>
            
         </div>

@@ -1,10 +1,10 @@
 import React from "react";
 
-const Current = ({wData, fData}) => {
+const Current = ({currentWeather, fiveDayWeather}) => {
 
 
-  let iconImg = wData?.weather?.[0].icon;
-  const uv = Math.round(fData?.[0]?.uvi)
+  let iconImg = currentWeather.weather?.[0].icon;
+  const uv = Math.round(fiveDayWeather[0]?.uvi)
   let color;
   if (uv < 4) {
     color = "green"
@@ -19,9 +19,9 @@ const Current = ({wData, fData}) => {
     
 
        <div className=" current">
-         <h3>City Name:  {wData?.name}</h3>
-         <h4>Temperature: {Math.round(wData?.main?.temp)}</h4>
-         <h4>Description: {wData?.weather?.[0]?.description}</h4>
+         <h3>City Name:  {currentWeather?.name}</h3>
+         <h4>Temperature: {Math.round(currentWeather?.main?.temp)}</h4>
+         <h4>Description: {currentWeather?.weather?.[0]?.description}</h4>
          <img alt = "" src ={`http://openweathermap.org/img/w/${iconImg}.png`}/> 
          <h4 >Uv Index: <span className={color}>{uv}</span></h4>
 

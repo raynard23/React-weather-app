@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 
-const Five = ({ dayData }) => {
+const FiveDayWeather = ({ dayData }) => {
 
   // console.log('temp',dayData)
   let iCon = dayData?.weather?.[0]?.icon;;
@@ -31,4 +31,4 @@ const Five = ({ dayData }) => {
 
 
 
-export default Five
+export default FiveDayWeather
