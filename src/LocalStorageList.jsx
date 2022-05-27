@@ -20,6 +20,7 @@ const listSearch = e => {
 const clear = () => {
   localStorage.clear()
   window.location.reload()
+  setCity()
    //i am a hundred percent positive there is another way to do this, i was just getting a bit tired. 
 }
  

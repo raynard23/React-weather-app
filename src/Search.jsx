@@ -12,7 +12,7 @@ const Search = ({ setCity , city}) => {
 
 
     const onSubmit = e => {
-    
+       
         e.preventDefault()
         //  console.log("onsubmit")
         

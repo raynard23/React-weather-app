@@ -5,6 +5,7 @@ const Current = ({currentWeather, fiveDayWeather}) => {
 
   let iconImg = currentWeather.weather?.[0].icon;
   const uv = Math.round(fiveDayWeather[0]?.uvi)
+  console.log(uv)
   let color;
   if (uv < 4) {
     color = "green"
